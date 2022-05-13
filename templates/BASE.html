@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<link rel="stylesheet" href="{% static '../static/css/bootstrap.css' %}"/>
+		<script src="{% static '../static/js/bootstrap.js' %}"></script>
+        {% block mycss %}{% endblock mycss %}
+		<title>{% block title %}模板{% endblock %}</title>
+	</head>
+	<body>
+		<nav class="navbar navbar-expand-sm navbar-dark bg-secondary mb-2">
+			<a class="navbar-brand" href="/">知识库</a>
+			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="nav-item">
+				<nav class="nav-link"><a href="/blog/">blog</a></nav>
+			</div>
+			<div class="nav-item">
+				<nav class="nav-link"><a href="/admin/">admin</a></nav>
+			</div>
+			<div class="nav-item">
+				<nav class="nav-link"><a href="/w_blog/">写博客</a></nav>
+			</div>
+			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<form class="d-flex" role="search">
+					<input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+					<button class="btn btn-outline-success" type="submit">Search</button>
+				</form>
+			</div>
+		</nav>
+
+        <div class="container">
+            {% block breadcrumb %}
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item active" aria-current="page">Home</li>
+                    </ol>
+                </nav>
+            {% endblock %}
+        </div>
+
+		<div class=container mt-3>
+			{% block middle %}
+				
+    		{% endblock %}
+		</div>
+
+	</body>
+</html>

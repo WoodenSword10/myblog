@@ -1,0 +1,17 @@
+{% extends 'BASE.html' %}
+{% load static %}
+{% block title %}blog{% endblock title %}
+{% block middle %}
+    <div class="row row-cols-sm-3 row-cols-1">
+        {% for category in categorys %}
+            <div class="col">
+                <div class="card mt-3 me-sm-5 postion-relative">
+                    <img src="{% static '../static/img/1.jpg' %}" class="img-fuild card-img">
+                    <div class="card-img-overlay postion-absolute top-50 start-50 translate-middle">
+                        <p class="card-text text-center "><a href="/blog/{{ category.id }}/">{{ category }}</a></p>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock middle %}

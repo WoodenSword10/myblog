@@ -1,0 +1,15 @@
+{% extends 'BASE.html' %}
+{% load static %}
+
+{% block title %}
+    写博客
+{% endblock title %}
+{% block middle %}
+    <form action="./" method="post">
+        {% csrf_token %}
+        {{ from.media }}
+        {{ form.as_p }}
+        <p><input type="submit" value="post"></p>
+    </form>
+{% endblock middle %}
+

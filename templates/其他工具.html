@@ -1,0 +1,24 @@
+{% extends 'BASE.html' %}
+{% load static %}
+{% block title %}{{ category }}{% endblock title %}
+{% block middle %}
+    <div class="row row-cols-1 row-cols-sm-3">
+        {% for blog in blogs %}
+        <div class="col mt-3">
+            <div class="card  text-center h-100">
+                <div class="card-header">
+                    <div class="card-title">{{ blog.title }}</div>
+                    <div class="card-subtitle">作者：{{ blog.owner }}</div>
+                </div>
+                <img src="/media/{{ blog.picture }}" alt="" class="img-fuild card-img-top">
+                <div class="card-body">
+                    {{ blog.desc }}
+                </div>
+                <div class="card-footer text-end">
+                    <a href="/blog/read/{{ blog.id }}">阅读</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+{% endblock middle %}

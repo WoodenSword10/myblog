@@ -1,0 +1,15 @@
+{% extends 'BASE.html' %}
+{% load static %}
+{% block mycss %}
+    <link rel="stylesheet" href="{% static '/static/css/markdown_highlighy.css' %}">
+    <link rel="stylesheet" href="{% static '../static/css/monokai.css' %}"/>
+    <script src="{% static '../static/js/jquery.min.js' %}">
+        $("img").addClass("img-fuild")
+    </script>
+{% endblock mycss %}
+{% block title %}{{ blog.title }}{% endblock title %}
+{% block middle %}
+    <div class="container">
+        {{ blog.content | safe}}
+    </div>
+{% endblock middle %}
